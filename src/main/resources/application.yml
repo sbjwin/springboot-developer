@@ -1,0 +1,32 @@
+spring:
+  # jpa 설정
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    defer-datasource-initialization: true
+  # 애플리케이션 실행 시 일래스틱 빈스토크에서 값을
+  # 덮어쓰므로 여기는 주석처리
+  #  datasource:
+  #    url: jdbc:h2:mem:testdb
+  #    username: sa
+  h2:
+    console:
+      enabled: true
+  # 보안 관련
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            # 덮어씌워지게 되므로 괜찮다
+            client-id: test_id
+            client-secret: test_secret
+            scope:
+              - email
+              - profile
+jwt:
+  issuer: sbjwin4271@gmail.com
+  # 덮어씌워지게 되므로 괜찮다
+  secret_key: test_key
